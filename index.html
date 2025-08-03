@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIプログラミング学習コミュニティ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: linear-gradient(45deg, #6f42c1, #4a148c);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        header p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+        }
+        .cta-button:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+        }
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #343a40;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .feature-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            flex-basis: 30%;
+            min-width: 280px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .feature-item h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #4a148c;
+        }
+        #target ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        #target li {
+            margin-bottom: 10px;
+        }
+        .join-section {
+            text-align: center;
+            background-color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            background: #343a40;
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="image.png" alt="AIプログラミング学習コミュニティ ロゴ" style="max-width: 150px; border-radius: 50%; margin-bottom: 20px;">
+            <h1>AIと共に学ぶ、次世代のプログラミングコミュニティへようこそ</h1>
+            <p>初心者から上級者まで、AIプログラミングの学習者が集う場所。</p>
+            <!-- TODO: ここに実際のDiscord招待リンクを設定してください -->
+            <a href="#" class="cta-button">今すぐDiscordに参加する</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">私たちのコミュニティについて</h2>
+                <p style="text-align: center;">
+                    当コミュニティは、急速に進化するAI技術をプログラミングに活かしたい人々が集まる学習プラットフォームです。<br>
+                    最新の情報を交換したり、コードについて質問し合ったり、プロジェクトで協力したりすることで、<br>
+                    一人では難しい学習も、仲間と一緒なら乗り越えられます。
+                </p>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title">このコミュニティでできること</h2>
+                <div class="features">
+                    <div class="feature-item">
+                        <h3>質問と回答</h3>
+                        <p>コーディングで行き詰まった時、気軽に質問できるチャンネルがあります。経験豊富なメンバーがあなたの疑問を解決に導きます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>コードレビュー</h3>
+                        <p>自分の書いたコードを共有し、他のメンバーからフィードバックをもらうことで、より実践的なスキルを身につけることができます。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>最新情報の共有</h3>
+                        <p>AIに関する最新の論文、ライブラリ、トレンドなどの情報が日々共有され、常に業界の最前線にキャッチアップできます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="target">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">こんな方におすすめ</h2>
+                <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
+                    <li>✅ AIプログラミングを始めたばかりの方</li>
+                    <li>✅ 実践的なスキルを身につけたい学生や社会人</li>
+                    <li>✅ 一緒に学ぶ仲間を見つけたい方</li>
+                    <li>✅ 最新のAI技術トレンドを追いかけたい方</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="join" class="join-section">
+            <div class="container">
+                <h2 class="section-title">今すぐ参加しよう！</h2>
+                <p>参加はとても簡単です。下のボタンからDiscordサーバーに参加するだけ！<br>あなたのご参加を心よりお待ちしています。</p>
+                <!-- TODO: ここに実際のDiscord招待リンクを設定してください -->
+                <a href="#" class="cta-button">無料でコミュニティに参加する</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AIプログラミング学習コミュニティ. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
