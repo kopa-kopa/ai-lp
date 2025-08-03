@@ -3,159 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIプログラミング学習コミュニティ</title>
+    <title>史上最強のAI学習コミュニティ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-        body {
-            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.8;
+        :root {
+            --primary-color: #6a11cb;
+            --secondary-color: #2575fc;
+            --dark-color: #121212;
+            --light-color: #f4f4f4;
+            --text-color: #ddd;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #212529;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
         .container {
-            max-width: 960px;
+            max-width: 1100px;
             margin: auto;
-            overflow: hidden;
             padding: 0 20px;
         }
+
         header {
-            background: linear-gradient(45deg, #6f42c1, #4a148c);
+            background: var(--dark-color);
             color: #fff;
-            padding: 4rem 0;
+            padding: 4rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .animation-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(106, 17, 203, 0.15), rgba(37, 117, 252, 0) 70%);
+            animation: rotate 20s linear infinite;
+            transform-origin: center center;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 25px var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
         header h1 {
-            margin: 0;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
         header p {
-            font-size: 1.3rem;
-            margin-top: 10px;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
         }
+
         .cta-button {
             display: inline-block;
-            background: #007bff;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: #fff;
             padding: 15px 35px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
-            margin-top: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: none;
         }
+
         .cta-button:hover {
-            background: #0056b3;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(106, 17, 203, 0.5);
         }
+
         section {
-            padding: 5rem 0;
-            border-bottom: 1px solid #e9ecef;
+            padding: 6rem 2rem;
         }
-        section:last-child {
-            border-bottom: none;
-        }
+        
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            color: #343a40;
+            color: var(--light-color);
         }
+
         .features {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
+
         .feature-item {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: #1e1e1e;
+            padding: 2.5rem;
+            border-radius: 15px;
             text-align: center;
-            flex-basis: 30%;
-            min-width: 280px;
+            border: 1px solid #222;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
         .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
+
+        .feature-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .feature-item h3 {
-            margin-top: 0;
             font-size: 1.5rem;
-            color: #4a148c;
+            margin-bottom: 1rem;
+            color: #fff;
         }
+
         #target ul {
             list-style: none;
             padding: 0;
-            display: inline-block;
-            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
             font-size: 1.1rem;
         }
+
         #target li {
+            background: #1e1e1e;
+            padding: 15px 20px;
+            border-radius: 8px;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
+        
+        #target .fa-check-circle {
+            color: var(--secondary-color);
+            margin-right: 15px;
+        }
+
         .join-section {
             text-align: center;
-            background-color: #ffffff;
+            background: var(--dark-color);
         }
+
         footer {
             text-align: center;
             padding: 3rem 0;
-            background: #343a40;
-            color: #f8f9fa;
+            background: #1e1e1e;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <img src="image.png" alt="AIプログラミング学習コミュニティ ロゴ" style="max-width: 150px; border-radius: 50%; margin-bottom: 20px;">
-            <p style="font-size: 1.5rem; margin-top: 5px; font-weight: bold;">ようこそ！</p>
-            <h1>史上最強のAI学習コミュニティ</h1>
-            <p>初心者から上級者まで、AIプログラミングの学習者が集う場所。</p>
-            <!-- TODO: ここに実際のDiscord招待リンクを設定してください -->
-            <a href="#" class="cta-button">今すぐDiscordに参加する</a>
+        <div class="animation-bg"></div>
+        <div class="header-content">
+            <div class="container">
+                <img src="image.png" alt="史上最強のAI学習コミュニティ ロゴ">
+                <h1>史上最強のAI学習コミュニティ</h1>
+                <p>AIと共に未来を創造する。初心者からエキスパートまで、すべての学習者が集う究極のプラットフォーム。</p>
+                <!-- TODO: ここに実際のDiscord招待リンクを設定してください -->
+                <a href="#" class="cta-button">今すぐ無料で参加する <i class="fab fa-discord"></i></a>
+            </div>
         </div>
     </header>
 
     <main>
         <section id="about">
             <div class="container">
-                <h2 class="section-title">私たちのコミュニティについて</h2>
-                <p style="text-align: center;">
-                    当コミュニティは、急速に進化するAI技術をプログラミングに活かしたい人々が集まる学習プラットフォームです。<br>
-                    最新の情報を交換したり、コードについて質問し合ったり、プロジェクトで協力したりすることで、<br>
-                    一人では難しい学習も、仲間と一緒なら乗り越えられます。
+                <h2 class="section-title">コミュニティが選ばれる理由</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto;">
+                    私たちは単なる情報交換の場ではありません。共に学び、共に成長し、未来のテクノロジーを形作るための実践的なコミュニティです。最新のAIトレンド、深層学習の理論から実装まで、あなたの「知りたい」がここにあります。
                 </p>
             </div>
         </section>
 
         <section id="features">
             <div class="container">
-                <h2 class="section-title">このコミュニティでできること</h2>
+                <h2 class="section-title">提供する価値</h2>
                 <div class="features">
                     <div class="feature-item">
-                        <h3>質問と回答</h3>
-                        <p>コーディングで行き詰まった時、気軽に質問できるチャンネルがあります。経験豊富なメンバーがあなたの疑問を解決に導きます。</p>
+                        <div class="icon"><i class="fas fa-comments"></i></div>
+                        <h3>活発なQ&A</h3>
+                        <p>コーディングの壁にぶつかっても大丈夫。24時間いつでも質問を投げかけ、経験豊富なメンターや仲間から即座にフィードバックを得られます。</p>
                     </div>
                     <div class="feature-item">
-                        <h3>コードレビュー</h3>
-                        <p>自分の書いたコードを共有し、他のメンバーからフィードバックをもらうことで、より実践的なスキルを身につけることができます。</p>
+                        <div class="icon"><i class="fas fa-code-branch"></i></div>
+                        <h3>共同プロジェクト</h3>
+                        <p>理論を実践に変える最高の機会。チームを組んでAIアプリケーションを開発し、ポートフォリオを充実させましょう。</p>
                     </div>
                     <div class="feature-item">
-                        <h3>最新情報の共有</h3>
-                        <p>AIに関する最新の論文、ライブラリ、トレンドなどの情報が日々共有され、常に業界の最前線にキャッチアップできます。</p>
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h3>最先端の知識</h3>
+                        <p>業界のトップランナーによる限定セミナーや最新論文の解説ウェビナーを定期的に開催。常に時代の最先端を走り続けられます。</p>
                     </div>
                 </div>
             </div>
@@ -163,22 +242,22 @@
 
         <section id="target">
             <div class="container" style="text-align: center;">
-                <h2 class="section-title">こんな方におすすめ</h2>
-                <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
-                    <li>✅ AIプログラミングを始めたばかりの方</li>
-                    <li>✅ 実践的なスキルを身につけたい学生や社会人</li>
-                    <li>✅ 一緒に学ぶ仲間を見つけたい方</li>
-                    <li>✅ 最新のAI技術トレンドを追いかけたい方</li>
+                <h2 class="section-title">このような方に最適です</h2>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> AI開発の世界に足を踏み入れたいと考えている方</li>
+                    <li><i class="fas fa-check-circle"></i> スキルを次のレベルに引き上げたい現役エンジニア</li>
+                    <li><i class="fas fa-check-circle"></i> 同じ志を持つ仲間とネットワークを築きたい方</li>
+                    <li><i class="fas fa-check-circle"></i> AIで世界を変えるアイデアを形にしたい起業家</li>
                 </ul>
             </div>
         </section>
 
         <section id="join" class="join-section">
             <div class="container">
-                <h2 class="section-title">今すぐ参加しよう！</h2>
-                <p>参加はとても簡単です。下のボタンからDiscordサーバーに参加するだけ！<br>あなたのご参加を心よりお待ちしています。</p>
+                <h2 class="section-title">未来への扉を開こう</h2>
+                <p>参加は簡単。下のボタンをクリックして、Discordサーバーに参加するだけ。<br>あなたのAI学習の旅は、ここから加速します。</p>
                 <!-- TODO: ここに実際のDiscord招待リンクを設定してください -->
-                <a href="#" class="cta-button">無料でコミュニティに参加する</a>
+                <a href="#" class="cta-button">史上最強のコミュニティに参加する</a>
             </div>
         </section>
     </main>
